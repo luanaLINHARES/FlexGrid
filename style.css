@@ -1,0 +1,457 @@
+@charset "UTF-8";
+
+@media print {
+    h1 {
+        color: blueviolet;
+    }
+}
+* {margin: 0;padding: 0;}
+/* criando o o grid*/
+/* body*/
+.pagina {
+    display: grid;
+    grid-template-areas:
+        "cabecalho"
+        "navegacao-principal"
+        "principal"
+        "extra"
+        "rodape";    
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #97BFD9;
+        font-size: 1em;
+        line-height: 20px;
+}
+.pagina p {
+    padding: 1.5px;
+    text-align: justify;
+    text-indent: 30px;
+}
+.cabecalho {
+    grid-area: cabecalho;
+    background-color: white;
+}
+.cabecalho > h1 {
+    margin: 20px;
+    text-align: center;
+    color: black;
+}
+.navegacao-principal{
+    grid-area: navegacao-principal;
+}
+.principal {
+    grid-area: principal;
+    
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    
+}
+.principal > h1 {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.principal h2 {
+    text-align: left;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.extra {
+    grid-area: extra;
+    margin: 0px 0px 0px 10px;
+    padding: 0px 10px 0px 10px;
+    background-color: rgb(220, 236, 245);
+}
+.extra > h2 {
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    color: red;
+
+}
+.rodape {
+    grid-area: rodape;
+    height: 50px;
+    
+}
+.rodape p {
+    text-indent: 0;
+    text-align: center;
+} 
+.fotoPrincipal {
+    width: 90%;
+}
+
+/*__________CONFIGURAÇÃO MENU__________*/
+.navegacao-principal {
+    position: relative;
+    background-color: rgb(220, 236, 245);
+    width: 100%;
+}
+.navegacao-principal ul {
+    width: 100%;
+    font-family: monospace;
+    list-style: none;
+}
+.navegacao-principal li {
+    width: 20%;
+}
+.navegacao-principal ul li ul li {
+    display: block;
+    width: 100%;
+}
+.menuPrincipal {
+    grid-area: menu;
+    background-color: blue;
+    text-align: center;
+}
+#menu-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#menu-principal li a {
+    color: blueviolet;
+    text-decoration: none;
+}
+#menu-principal li {
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    text-align: center;
+}
+#menu-principal li a {
+    color: black;
+    text-decoration: none;
+}
+.dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: absolute;
+    transition: all 0.5 ease;
+    margin-top: 10px;
+    display: none;
+    background-color: blue;
+}
+#menu-principal li:hover,
+#menu-principal li:focus-within {
+    background-color: aquamarine;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+#menu-principal ul li:active {
+    background-color: rgb(82, 185, 245);
+}
+#menu-principal li a:hover {
+    color: rgb(166, 0, 255);
+}
+#menu-principal li:hover>ul,
+#menu-principal li:focus-within,
+.dropdown ul:hover,
+.dropdown ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    background-color: rgb(154, 203, 234);
+    
+}/*___________ FIM DO MENU __________*/
+
+
+
+/* [PAGINA PRINCIPAL] INDEX */
+/* configuração do flex*/
+.principal {
+    display: block;
+    width: 100%;
+    background-color: #FFFFFF;
+    margin: auto;
+    
+}
+.paiA {
+    display: flex;
+    flex-flow: row wrap;
+}
+.paiA > h2 {
+    width: 100%;
+    background-color: black;
+    color: red;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 25px;
+}
+.itensA {
+    flex: 150px;
+    background-color: rgb(220, 236, 245);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 15px;
+}
+.itensA > h3 {
+    text-align: center;
+    color: red;
+    background-color: rgb(185, 220, 240);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin: -5px -5px 0px -5px;
+    padding: -5px;
+}
+.imgCentral {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
+img {
+    width: 100%;
+}
+.imgPagPAutor {
+    width: 100px;
+    background-color: red;
+    margin: 0;
+    padding: 0;
+    border-radius: 100%;
+}
+.imgPagPAutor img {
+    border-radius: 100%;
+}
+section ul {
+    list-style-type: none;
+    text-align: left;
+}
+td {
+    text-align: center;
+    font-size: 0.95em;
+    height: 1.1em;
+    background-color:rgba(98, 176, 225, 0.618);
+    color:black;
+    border: 1px solid rgba(0, 0, 0, 0.387);
+    text-align: left;
+    text-indent: 10px;
+}
+th {
+    text-align: center;
+    text-indent: 0px;
+    font-size: 1em;
+    background-color:rgb(98, 177, 225);
+    color: aliceblue;
+    height: 25px;
+    width: 250px;
+    border: 1px solid white;
+}
+table {
+    align-items: center;
+    margin: auto;
+}
+/*______ FIM PAGINA PRINCIPAL________*/
+
+
+/*_________[PAGINAS SECUNDÁRIAS]__________*/
+
+
+
+
+/*configuiraçao para fotos em geral*/
+.artistas {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    padding-bottom: 30px;
+}
+/*.ImagensPersonagem {
+    float: left;
+    display: block;
+}*/
+/*______________ PAGINA REDE SOCIAIS ____________*/
+/* */
+.icone {
+    width: auto;
+}
+.midiaSocial {
+    display: block;
+    float: left; 
+}
+.midiaSocial a {
+    text-decoration: none;
+    color: black;
+    background-color: aquamarine;
+}
+.midiaSocial a:hover {
+    background-color: red;
+}
+
+/* quando o mause passar por cima fica vermelho*/
+/* imagen pequena que estar a esquerda */
+.mdiaSociaLateral > img {
+    display: block;
+    float: left;
+    margin: 0px 15px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 40%;
+}
+/*_________________PAGINA ENREDO__________________*/
+/*temporadas*/
+.ListaTemperada {
+    background-color: aquamarine;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+.ListaTemperada > h2 {
+    color: black;
+    background-color: rgb(40, 245, 177);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 5px 5px 0px 5px;
+    margin: -5px -5px 0px -5px;
+    text-align: center;
+}
+.sinpseEsquerda > img {
+    display: block;
+    float: left;
+    margin: 0px 15px 0px 0px;
+    padding: 0px 15px 0px 0px;
+    background-color: aqua;
+}
+.sinpseEsquerda > p {
+    margin: 0px 15px 0px 0px;
+    padding: 0px 15px 0px 0px;
+    background-color: rgba(165, 42, 42, 0.1);
+}/*______________fimmmmmmmmmmmm_________________*/
+
+/* PAGINA PERSONAGEM */
+
+.personagemSocial {
+    display: block;
+    float: left;
+}
+
+/* para telefone  */
+@media screen and (min-width:480px) {
+    body {
+        font-size: .85em;
+    }
+    .extra {
+        grid-area: extra;
+        margin: 0px;
+        padding: 0px 10px 0px 10px;
+        background-color: rgb(220, 236, 245);
+
+    }
+}
+
+
+
+@media screen and (min-width:820px) {
+    .principal {
+        position: relative;
+    }
+    .pagina {
+        grid-template-areas:
+            "cabecalho cabecalho"
+            "navegacao-principal navegacao-principal"
+            "principal extra"
+            "rodape rodape ";
+
+            grid-template-columns: 6fr 3fr;    
+    }
+    .extra h2 {
+        text-align: center;
+        color: white;
+    }
+    .extra {
+        grid-area: extra;
+        margin: 0px 0px 0px 10px;
+        padding: 0px 10px 0px 15px;
+        background-color: rgb(220, 236, 245);
+    }
+}
+/* para paginas maior que 1280px */
+@media screen and (min-width:1280px) {
+    .pagina { 
+        font-size: .9em;
+    }
+
+    .pagina {
+        grid-template-areas:
+            "cabecalho cabecalho cabecalho"
+            "navegacao-principal principal extra"
+            "rodape rodape rodape";
+            
+            grid-template-columns: 200px 5fr 2fr;
+    }
+    /*__________CONFIGURAÇÃO MENU__________*/
+
+
+.navegacao-principal li {
+    width: 100%;
+}
+.navegacao-principal ul li ul li {
+    display: block;
+    width: 100%;
+}
+.menuPrincipal {
+    grid-area: menu;
+    background-color: blue;
+    text-align: center;
+}
+#menu-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#menu-principal li a {
+    color: blueviolet;
+    text-decoration: none;
+}
+#menu-principal li {
+    float: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    text-align: center;
+}
+#menu-principal li a {
+    color: black;
+    text-decoration: none;
+}
+.dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: absolute;
+    transition: all 0.5 ease;
+    margin-top: 10px;
+    display: none;
+    background-color: blue;
+}
+#menu-principal li:hover,
+#menu-principal li:focus-within {
+    background-color: aquamarine;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+#menu-principal ul li:active {
+    background-color: rgb(82, 185, 245);
+}
+#menu-principal li a:hover {
+    color: rgb(166, 0, 255);
+}
+#menu-principal li:hover>ul,
+#menu-principal li:focus-within,
+.dropdown ul:hover,
+.dropdown ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    background-color: rgb(154, 203, 234);
+    
+}/*___________ FIM DO MENU __________*/
+}
